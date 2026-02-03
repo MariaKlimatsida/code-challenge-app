@@ -1,0 +1,7 @@
+/* Register page has been removed from routing. File kept intentionally minimal. */
+.register-page {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: var(--bg);
+    padding: 20px;
+}

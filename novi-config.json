@@ -1,0 +1,212 @@
+{
+  "collections": [
+    {
+      "name": "challenges",
+      "fields": [
+        { "name": "title", "type": "string", "required": true },
+        { "name": "description", "type": "string", "required": true },
+        { "name": "difficulty", "type": "string", "required": true },
+        { "name": "points", "type": "number", "required": true },
+        { "name": "createdByEmail", "type": "string", "required": true }
+      ],
+      "permissions": {
+        "GET": ["anonymous", "user"],
+        "POST": ["user"],
+        "PUT": ["admin"],
+        "PATCH": ["admin"],
+        "DELETE": ["admin"]
+      }
+    },
+    {
+      "name": "submissions",
+      "fields": [
+        { "name": "challenge", "type": "string", "required": true },
+        { "name": "userEmail", "type": "string", "required": true },
+        { "name": "code", "type": "string", "required": false },
+        { "name": "status", "type": "string", "required": true },
+        { "name": "pointsRequested", "type": "number", "required": true },
+        { "name": "pointsAwarded", "type": "number", "required": false }
+      ],
+      "permissions": {
+        "GET": ["user", "admin"],
+        "POST": ["user"],
+        "PUT": ["user", "admin"],
+        "PATCH": ["user", "admin"],
+        "DELETE": ["admin"]
+      }
+    },
+    {
+      "name": "profiles",
+      "fields": [
+        { "name": "userEmail", "type": "string", "required": true, "unique": true },
+        { "name": "displayName", "type": "string", "required": true },
+        { "name": "totalScore", "type": "number", "required": true }
+      ],
+      "permissions": {
+        "GET": ["user", "admin"],
+        "POST": ["admin"],
+        "PUT": ["admin"],
+        "PATCH": ["admin"],
+        "DELETE": ["admin"]
+      }
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@codechallenge.nl",
+      "password": "admin123",
+      "roles": ["admin"]
+    }
+  ],
+  "data": {
+    "challenges": [
+      {
+        "title": "Een eenvoudige functie",
+        "description": "Schrijf een functie die twee getallen optelt en het resultaat retourneert.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "String omkeren",
+        "description": "Schrijf een functie die een string omdraait zonder reverse() te gebruiken.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Even of oneven",
+        "description": "Schrijf een functie die bepaalt of een getal even of oneven is.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Maximum van drie",
+        "description": "Schrijf een functie die het grootste getal van drie invoerwaarden retourneert.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Palindrome check",
+        "description": "Controleer of een woord of zin een palindrome is (negeer spaties en hoofdletters).",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Som van 1 t/m N",
+        "description": "Gebruik een for-loop om de som van alle getallen van 1 t/m N te berekenen.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Array som",
+        "description": "Bereken de som van alle getallen in een array.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Zoek de langste string",
+        "description": "Vind de langste string in een array van strings.",
+        "difficulty": "Beginner",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Tel letters",
+        "description": "Schrijf een functie die telt hoe vaak elke letter voorkomt in een string.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "FizzBuzz",
+        "description": "Print 1..N, maar vervang veelvouden van 3 door Fizz, van 5 door Buzz, en van 15 door FizzBuzz.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Duplicaten verwijderen",
+        "description": "Verwijder dubbele waarden uit een array zonder Set() te gebruiken.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Grootste in array",
+        "description": "Vind het grootste getal in een array zonder Math.max() te gebruiken.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Anagram check",
+        "description": "Controleer of twee strings anagrammen zijn (negeer spaties en hoofdletters).",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Twee-som (Two Sum)",
+        "description": "Gegeven een array en een target: vind twee indices waarvan de som gelijk is aan de target.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Array omkeren",
+        "description": "Schrijf een functie die een array omkeert zonder reverse() te gebruiken.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Fibonacci iteratief",
+        "description": "Genereer de eerste N Fibonacci-getallen met een iteratieve oplossing.",
+        "difficulty": "Gemiddeld",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Merge sorted arrays",
+        "description": "Voeg twee gesorteerde arrays samen tot één gesorteerde array (zonder sort()).",
+        "difficulty": "Gevorderd",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Stack implementeren",
+        "description": "Implementeer een Stack met push/pop/peek en gebruik hem om haakjes te controleren.",
+        "difficulty": "Gevorderd",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Queue implementeren",
+        "description": "Implementeer een Queue met enqueue/dequeue/peek.",
+        "difficulty": "Gevorderd",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      },
+      {
+        "title": "Memoized Fibonacci",
+        "description": "Los Fibonacci op met memoization (dynamic programming) en leg uit waarom dit sneller is.",
+        "difficulty": "Gevorderd",
+        "points": 100,
+        "createdByEmail": "admin@codechallenge.nl"
+      }
+    ],
+    "profiles": [
+      {
+        "userEmail": "admin@codechallenge.nl",
+        "displayName": "Admin",
+        "totalScore": 0
+      }
+    ]
+  }
+}

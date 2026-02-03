@@ -1,0 +1,46 @@
+.homepage {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: var(--bg);
+    padding: 20px;
+}
+
+/* Home page specific styles only. Navbar/button styling is global. */
+
+.hero {
+    margin-top: 0;
+    padding: 20px;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    background-color: var(--success);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.cta-btn.view-challenges {
+    background-color: var(--primary-2);
+}
